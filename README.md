@@ -22,7 +22,7 @@ pod 'MNMonitor'
 
 ## Author
 
-刘楠, liunan.coulson@bytedance.com
+apoptoxin, 875035583@qq.com
 
 ## License
 

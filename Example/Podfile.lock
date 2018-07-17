@@ -1,0 +1,16 @@
+PODS:
+  - MNMonitor (0.1.0)
+
+DEPENDENCIES:
+  - MNMonitor (from `../`)
+
+EXTERNAL SOURCES:
+  MNMonitor:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MNMonitor: c6aeb96f1f26e65792c990e170b5ad3e2291faae
+
+PODFILE CHECKSUM: 98b7e04b7baeaf280352adaf29f151a65121ecd7
+
+COCOAPODS: 1.4.0

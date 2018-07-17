@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/刘楠/MNMonitor'
+  s.homepage         = 'https://github.com/apoptoxin/MNMonitor'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '刘楠' => 'liunan.coulson@bytedance.com' }
-  s.source           = { :git => 'https://github.com/刘楠/MNMonitor.git', :tag => s.version.to_s }
+  s.author           = { 'apoptoxin' => '875035583@qq.com' }
+  s.source           = { :git => 'https://github.com/apoptoxin/MNMonitor.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
