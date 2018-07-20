@@ -1,11 +1,7 @@
 use_frameworks!
 
 target 'MNMonitor_Example' do
+
   pod 'MNMonitor', :path => '../'
 
-  target 'MNMonitor_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

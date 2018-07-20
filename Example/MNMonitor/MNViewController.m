@@ -7,9 +7,10 @@
 //
 
 #import "MNViewController.h"
+#import "MNMonitorTrackerConfig.h"
 
 @interface MNViewController ()
-
+@property (nonatomic, strong) MNMonitorTrackerConfig *config;
 @end
 
 @implementation MNViewController
@@ -18,6 +19,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.config = [MNMonitorTrackerConfig configWithCPUConfig:[MNCPUTrackerConfig instanceWithTimeInterval:3.0f completionBlock:^(double currentUsage, BOOL isSucceed) {
+        
+    }] memConfig:[MNMemoryTrackerConfig instanceWithTimeInterval:2.0 completionBlock:^(double currentUsage, BOOL isSucceed) {
+        
+    }] runloopConfig:[MNMainRunloopTrackerConfig instanceWithTimeInterval:5.0 completionBlock:^(double currentUsage, BOOL isSucceed) {
+        
+    }]];
+    NSLog(@"b");
 }
 
 - (void)didReceiveMemoryWarning
