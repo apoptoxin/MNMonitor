@@ -8,9 +8,11 @@
 
 #import "MNViewController.h"
 #import "MNMonitorTrackerConfig.h"
+#import "MNCPURecorder.h"
 
 @interface MNViewController ()
 @property (nonatomic, strong) MNMonitorTrackerConfig *config;
+@property (nonatomic, strong) MNCPURecorder *recorder;
 @end
 
 @implementation MNViewController
@@ -26,7 +28,11 @@
     }] runloopConfig:[MNMainRunloopTrackerConfig instanceWithTimeInterval:5.0 completionBlock:^(double currentUsage, BOOL isSucceed) {
         
     }]];
-    NSLog(@"b");
+    _recorder = [MNCPURecorder new];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        double useage = [self.recorder currentCPUUsage];
+        NSLog(@"cpu usage: %f",useage);
+    }];
 }
 
 - (void)didReceiveMemoryWarning
