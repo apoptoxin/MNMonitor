@@ -8,5 +8,5 @@
 #import <Foundation/Foundation.h>
 
 @interface MNCPURecorder : NSObject
-- (double)currentCPUUsage;
++ (double)currentCPUUsage:(BOOL *)succeed;
 @end

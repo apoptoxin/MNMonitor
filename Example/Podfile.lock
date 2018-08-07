@@ -1,16 +1,23 @@
 PODS:
-  - MNMonitor (0.1.0)
+  - Juggernaut (0.0.5)
+  - MNMonitor (0.1.0):
+    - Juggernaut
 
 DEPENDENCIES:
   - MNMonitor (from `../`)
 
+SPEC REPOS:
+  "git@code.byted.org:iOS_Library/douyin_binary_repo.git":
+    - Juggernaut
+
 EXTERNAL SOURCES:
   MNMonitor:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  MNMonitor: 0856905baf5c0921226e4958ec7e0f18ef695592
+  Juggernaut: ae33fac0961f0daea7908b7fb91631c94d5d274b
+  MNMonitor: 07c582e10b62d326e02ca000eb91a59ef507ce06
 
-PODFILE CHECKSUM: ee1d64a22a6f79443e762cdbf89ba499619d9973
+PODFILE CHECKSUM: a0b542655253f5157f6f2bf7e017834d89afa24f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

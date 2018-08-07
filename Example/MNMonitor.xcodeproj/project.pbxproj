@@ -202,7 +202,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				42FFDD83D7941EF527257CB3 /* [CP] Embed Pods Frameworks */,
-				0AD0800B11985091701811F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,6 +240,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "刘楠";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = VX5J3P2CTW;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -288,21 +290,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0AD0800B11985091701811F5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MNMonitor_Example/Pods-MNMonitor_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		42FFDD83D7941EF527257CB3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,10 +297,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MNMonitor_Example/Pods-MNMonitor_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Juggernaut/Juggernaut.framework",
 				"${BUILT_PRODUCTS_DIR}/MNMonitor/MNMonitor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Juggernaut.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MNMonitor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,11 +465,12 @@
 			baseConfigurationReference = E1273CFFE925E16E9FF7E88F /* Pods-MNMonitor_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VX5J3P2CTW;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNMonitor/MNMonitor-Prefix.pch";
 				INFOPLIST_FILE = "MNMonitor/MNMonitor-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.micronil.MNMonitor-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -491,11 +481,12 @@
 			baseConfigurationReference = 2D0A536997D1B7EE6C6E3A28 /* Pods-MNMonitor_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VX5J3P2CTW;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MNMonitor/MNMonitor-Prefix.pch";
 				INFOPLIST_FILE = "MNMonitor/MNMonitor-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.micronil.MNMonitor-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

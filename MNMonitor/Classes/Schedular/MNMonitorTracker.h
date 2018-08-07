@@ -9,5 +9,7 @@
 #import "MNMonitorTrackerConfig.h"
 
 @interface MNMonitorTracker : NSObject
++ (instancetype)sharedTracker;
 - (void)startWithConfig:(MNMonitorTrackerConfig *)config;
+- (void)stop;
 @end

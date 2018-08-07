@@ -1,7 +1,11 @@
-use_frameworks!
+#use_frameworks!
+#platform :ios, '8.0' 
+
+source 'git@code.byted.org:iOS_Library/douyin_binary_repo.git'
 
 target 'MNMonitor_Example' do
 
   pod 'MNMonitor', :path => '../'
+  pod 'Juggernaut'
 
 end

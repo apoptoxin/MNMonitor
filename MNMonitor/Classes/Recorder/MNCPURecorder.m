@@ -9,18 +9,8 @@
 #import <mach/mach.h>
 
 @implementation MNCPURecorder
-- (double)currentCPUUsage {
++ (double)currentCPUUsage:(BOOL *)succeed {
     kern_return_t kr;
-    task_info_data_t tinfo;
-    mach_msg_type_number_t task_info_count;
-    
-    task_info_count = TASK_INFO_MAX;
-    kr = task_info(mach_task_self(), TASK_BASIC_INFO, (task_info_t)tinfo, &task_info_count);
-    if (kr != KERN_SUCCESS) {
-        return -1;
-    }
-    
-    task_basic_info_t      basic_info;
     thread_array_t         thread_list;
     mach_msg_type_number_t thread_count;
     
@@ -30,11 +20,12 @@
     thread_basic_info_t basic_info_th;
     uint32_t stat_thread = 0; // Mach threads
     
-    basic_info = (task_basic_info_t)tinfo;
-    
     // get threads in the task
     kr = task_threads(mach_task_self(), &thread_list, &thread_count);
     if (kr != KERN_SUCCESS) {
+        if (succeed) {
+            *succeed = NO;
+        }
         return -1;
     }
     if (thread_count > 0)
@@ -51,6 +42,9 @@
         kr = thread_info(thread_list[j], THREAD_BASIC_INFO,
                          (thread_info_t)thinfo, &thread_info_count);
         if (kr != KERN_SUCCESS) {
+            if (succeed) {
+                *succeed = NO;
+            }
             return -1;
         }
         
@@ -66,7 +60,16 @@
     
     kr = vm_deallocate(mach_task_self(), (vm_offset_t)thread_list, thread_count * sizeof(thread_t));
     assert(kr == KERN_SUCCESS);
-    
+    if (kr != KERN_SUCCESS) {
+        if (succeed) {
+            *succeed = NO;
+            return -1;
+        }
+    } else {
+        if (succeed) {
+            *succeed = YES;
+        }
+    }
     return tot_cpu;
 }
 @end
